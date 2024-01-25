@@ -6,13 +6,13 @@
     font-family: 'Poppins', sans-serif
 }
 h1,h2,h3,h4{
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 50px;
     color: #262626;
 
 }
 p{
-    font-family: 'Karla', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 25px;
     color: #262626;
 }
@@ -30,3 +30,15 @@ a{
     width: calc(100vw - 200px);
     margin: 0 auto;
 }
+@media only screen and (max-width: 768px) {
+    .container{
+        width: calc(100vw - 100px);
+        margin: 0 auto;
+    }
+  }
+  @media only screen and (max-width: 426px) {
+    .container{
+        width: 100%;
+        padding: 0 20px;
+    }
+  }
