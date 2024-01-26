@@ -90,6 +90,7 @@ const Footer = () => {
   );
 };
 const Wrapper = styled.div`
+border-top: 1px solid lightgray;
   padding: 50px 0;
   background-color: #ebf4f4;
   span{
@@ -101,7 +102,7 @@ const Wrapper = styled.div`
     h4 {
       font-size: 20px;
       text-transform: uppercase;
-      border-bottom: 1px solid cyan;
+      border-bottom: 1px solid lightgray;
       width: max-content;
     }
     a:hover{
@@ -151,7 +152,7 @@ const Wrapper = styled.div`
       .input-field {
         display: flex;
         align-items: center;
-        border-bottom: 1px solid cyan;
+        border-bottom: 1px solid lightgray;
         width: max-content;
         padding: 10px 0;
         input {

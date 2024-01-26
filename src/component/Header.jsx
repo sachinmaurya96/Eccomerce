@@ -30,6 +30,9 @@ const Header = () => {
             <CiShoppingCart size={25} />
             <span>02($250)</span>
           </div>
+          <div className="user">
+            <img src="/assets/user.png" alt="" />
+          </div>
           <div className="menu" onClick={()=>setOpen(prev=>!prev)}>
             {open ? <RxCross2 size={25} /> : <RxHamburgerMenu size={25} />}
           </div>
@@ -39,11 +42,12 @@ const Header = () => {
   );
 };
 const Wrapper = styled.div`
+z-index: 10;
 position: sticky;
 top: 0;
 width: 100vw;
 border-bottom: 1px solid lightgray;
-
+box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
   nav {
     width: 100%;
   background-color: #fff;
@@ -75,6 +79,18 @@ border-bottom: 1px solid lightgray;
       display: flex;
       align-items: center;
       gap: 30px;
+      .user{
+        width: 30px;
+          height: 30px;
+          border-radius: 50%;
+        img{
+          height: 100%;
+          width: 100%;
+          background-position: center;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
       div {
         display: flex;
         align-items: center;
@@ -90,7 +106,8 @@ border-bottom: 1px solid lightgray;
     nav{
       .actions{
         .menu{
-          display: block;
+          display: flex;
+          align-items: center;
           width: max-content;
         }
 
@@ -107,6 +124,7 @@ border-bottom: 1px solid lightgray;
        left: 0;
        z-index: -3;
        border-bottom: 1px solid lightgray;
+       box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
       }
       .open{
         top: 80px;
@@ -116,7 +134,9 @@ border-bottom: 1px solid lightgray;
   @media only screen and (max-width: 768px){
     nav{
       padding: 20px 50px;
-
+      .actions{
+        gap: 20px;
+      }
       .nav-links{
         padding: 10px 50px;
       }
@@ -125,6 +145,11 @@ border-bottom: 1px solid lightgray;
   }
   @media only screen and (max-width: 622px){
     nav{
+      .actions{
+        .user{
+          display: none;
+        }
+      }
       flex-direction: column;
       align-items: center;
       .nav-links{
