@@ -176,5 +176,73 @@ const Wrapper = styled.section`
       padding: 0 200px;
     }
   }
+  @media only screen and (max-width: 768px){
+    .popular_product {
+    .products_grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+  }
+  .review_blog {
+    padding: 50px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    
+  }
+  .best_deal {
+    grid-template-columns:100%;
+    gap: 30px;
+    .right {
+      .sale-product {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+  .service_detail {
+    padding: 50px 0;
+    .container {
+      padding: 0 30px;
+    }
+  }
+  }
+  @media only screen and (max-width: 426px){
+    .popular_product {
+    .products_grid {
+      grid-template-columns: 100%;
+      gap: 10px;
+      padding: 0 10px;
+    }
+  }
+  .review_blog {
+    padding: 50px 10px;
+    grid-template-columns: 1fr;
+    gap: 50px;
+    .review{
+      width: 100%;
+
+    }
+  }
+  .best_deal {
+    padding: 50px 10px;
+    .right {
+      .sale-product {
+        grid-template-columns: 100%;
+        
+      }
+    }
+  }
+  .service_detail {
+    padding: 50px 0;
+    .container{
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  .offer-cards {
+    grid-template-columns: 100%;
+    padding: 50px 10px;
+  }
+  }
 `;
 export default HomePage;

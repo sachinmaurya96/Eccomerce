@@ -36,7 +36,7 @@ const BlogCard = () => {
 const Wrapper = styled.div`
     .blog_card{
         display: grid;
-        grid-template-columns: 50px 200px 1fr;
+        grid-template-columns: 50px 250px 1fr;
         .date{
             padding: 5px;
             display: flex;
@@ -55,7 +55,7 @@ const Wrapper = styled.div`
             padding: 10px;
             img{
                 width: 100%;
-                height: 100%;
+               
             }
         }
         .blog_content{
@@ -102,6 +102,35 @@ const Wrapper = styled.div`
                     }
                 }
             }
+        }
+    }
+
+    @media only screen and (max-width: 426px){
+        .blog_card{
+            .date{
+                display: none;
+            }
+            display: grid;
+            
+            grid-template-columns: 100%;
+
+            .blog_content{
+            
+        
+            .user_detail{
+                .name_like_views{
+                    display: flex;
+                    flex-wrap: wrap;
+                    span{
+                        padding: 0 10px;
+                    }
+                    .like{
+                        border-left: 5px solid lightgray;
+                        border-right: 5px solid lightgray;
+                    }
+                }
+            }
+        }
         }
     }
 

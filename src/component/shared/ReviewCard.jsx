@@ -56,5 +56,17 @@ border-radius: 10px;
             }
         }
     }
+    @media only screen and (max-width: 426px){
+        .review_card{
+        .user_info{
+            .user_img{
+                height: 50px;
+                width: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+    }
+    }
 `
 export default ReviewCard
