@@ -3,26 +3,20 @@ import styled from 'styled-components'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination ,Autoplay,Scrollbar} from 'swiper/modules';
+import {  Autoplay} from 'swiper/modules';
 
 const FullSlider = () => {
-  const pagination = {
-    clickable: true,
-    renderBullet: function (index, className) {
-      return '<span class="' + className + '">' + (index + 1) + '</span>';
-    },
-  };
   return (
     <Wrapper>
       <Swiper
-        pagination={pagination}
+        
         className="mySwiper"
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         loop={true}
-        modules={[Pagination,Autoplay]}
+        modules={[Autoplay]}
       >
         <SwiperSlide><img src="/assets/slide1.png" alt="" /></SwiperSlide>
         <SwiperSlide><img src="/assets/slide2.png" alt="" /></SwiperSlide>
