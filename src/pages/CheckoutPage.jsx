@@ -1,11 +1,15 @@
 import React from 'react'
+import styled from 'styled-components'
+import PageTop from '../component/shared/PageTop'
 
 const CheckoutPage = () => {
   return (
-    <div>
-      checkoutpage
-    </div>
+    <Wrapper>
+      <PageTop title={"Checkout"}/>
+    </Wrapper>
   )
 }
-
+const Wrapper = styled.section`
+  
+`
 export default CheckoutPage

@@ -13,26 +13,32 @@ const Header = () => {
           <span>V.</span>Mart
         </div>
         <div className={`nav-links ${open && "open"}`}>
-          <NavLink className="link">Home</NavLink>
-          <NavLink className="link">Shop</NavLink>
-          <NavLink className="link">Blog</NavLink>
-          <NavLink className="link">Contact</NavLink>
+          <NavLink className="link" to={"/"}>Home</NavLink>
+          <NavLink className="link" to={"/shop"}>Shop</NavLink>
+          <NavLink className="link" to={"/blog"}>Blog</NavLink>
+          <NavLink className="link" to={"/contact"}>Contact</NavLink>
         </div>
         <div className="actions">
           <div className="search">
             <CiSearch size={25} />
           </div>
+          <NavLink to={"/wishlist"}>
           <div className="wishlist">
             <CiHeart size={25} />
             <span>02</span>
           </div>
+          </NavLink>
+          <NavLink to="/cart">
           <div className="cart">
             <CiShoppingCart size={25} />
             <span>02($250)</span>
           </div>
-          <div className="user">
+          </NavLink>
+         <NavLink to={"/profile"}>
+         <div className="user">
             <img src="/assets/user.png" alt="" />
           </div>
+         </NavLink>
           <div className="menu" onClick={()=>setOpen(prev=>!prev)}>
             {open ? <RxCross2 size={25} /> : <RxHamburgerMenu size={25} />}
           </div>

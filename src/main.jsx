@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
-import { createBrowserRouter ,RouterProvider} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./pages/HomePage.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import AddToCartPage from "./pages/AddToCartPage.jsx";
@@ -22,16 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<ErrorPage/>,
-   children: [
+    errorElement: <ErrorPage />,
+    children: [
+      //public routes
       {
         path: "/",
         element: <Home />,
       },
-      {
-        path: "/cart",
-        element: <Protected authentication><AddToCartPage/></Protected>,
-      },
+
       {
         path: "/blog",
         element: <BlogPage />,
@@ -41,7 +39,7 @@ const router = createBrowserRouter([
         element: <SingleBlogPage />,
       },
       {
-        path: "/products",
+        path: "/shop",
         element: <ProductPage />,
       },
       {
@@ -52,28 +50,61 @@ const router = createBrowserRouter([
         path: "/contact",
         element: <ContactPage />,
       },
+
+      //Protected routes
+      {
+        path: "/cart",
+        element: (
+          <Protected authentication>
+            <AddToCartPage />
+          </Protected>
+        ),
+      },
       {
         path: "/login",
-        element: <Protected authentication={false}><LoginPage /></Protected>,
+        element: (
+          <Protected authentication={false}>
+            <LoginPage />
+          </Protected>
+        ),
       },
       {
         path: "/signup",
-        element: <Protected authentication={false}><SignupPage /></Protected>,
+        element: (
+          <Protected authentication={false}>
+            <SignupPage />
+          </Protected>
+        ),
       },
       {
         path: "/profile",
-        element:<Protected authentication> <MyAccountPage /></Protected>,
+        element: (
+          <Protected authentication>
+            {" "}
+            <MyAccountPage />
+          </Protected>
+        ),
       },
       {
         path: "/wishlist",
-        element: <Protected authentication><WishListPage /></Protected>,
+        element: (
+          <Protected authentication>
+            <WishListPage />
+          </Protected>
+        ),
       },
       {
         path: "/checkout",
-        element: <Protected authentication><CheckoutPage /></Protected>,
+        element: (
+          <Protected authentication>
+            <CheckoutPage />
+          </Protected>
+        ),
       },
     ],
-  }
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(<RouterProvider router={router}/>);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
