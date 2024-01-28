@@ -5,10 +5,10 @@ import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { calculateDiscountedPrice } from "../../utils";
 import StarRatings from "react-star-ratings";
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product,height ="300px" }) => {
   return (
     <Card>
-      <div className="image">
+      <div className="image" style={{height:height}}>
         <img src={product.thumbnail} alt={product.title} />
         <div className="cart_button">
           <AddToCartBtn />
@@ -68,6 +68,7 @@ const Card = styled.div`
     }
     img {
       width: 100%;
+      height: 100%;
       border-radius: 5px;
       background-position: center;
       object-fit: cover;

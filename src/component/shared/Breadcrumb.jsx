@@ -7,7 +7,7 @@ const Breadcrumb = () => {
 
   return (
     <div>
-      <Link to="/">Home</Link>
+      <Link to="/">Home / </Link>
       {pathnames.map((name, index) => (
         <span key={name}>
           {index > 0 && ' / '}

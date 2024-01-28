@@ -12,6 +12,7 @@ import { products } from "../data/data";
 
 const HomePage = () => {
   const result = selectProducts(products);
+  const bestDearProduct = selectProducts(products,6)
   return (
     <Wrapper>
       <FullSlider />
@@ -50,7 +51,7 @@ const HomePage = () => {
             <p>All featured product find here</p>
           </div>
           <div className="sale-product">
-            {result.map((product) => (
+            {bestDearProduct.map((product) => (
               <ProductCard product={product} />
             ))}
           </div>
@@ -130,7 +131,7 @@ const Wrapper = styled.section`
     .right {
       .sale-product {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 5px;
       }
     }

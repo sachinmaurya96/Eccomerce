@@ -1,9 +1,10 @@
 import React from 'react'
+import PageTop from '../component/shared/PageTop'
 
 const MyAccountPage = () => {
   return (
     <div>
-      myaccountpage
+      <PageTop title={"Profile"}/>
     </div>
   )
 }

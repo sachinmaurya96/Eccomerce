@@ -1,5 +1,5 @@
 //select differen differen category product
-export function selectProducts(products) {
+export function selectProducts(products,limit=8) {
     const selectedProducts = [];
     const selectedCategories = new Set();
     const shuffledProducts = products.sort(() => Math.random() - 0.5);
@@ -10,7 +10,7 @@ export function selectProducts(products) {
         selectedCategories.add(product.category);
       }
   
-      if (selectedProducts.length === 8) {
+      if (selectedProducts.length === limit) {
         break; 
       }
     }
