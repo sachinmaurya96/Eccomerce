@@ -4,8 +4,8 @@ import { Navigation, Autoplay } from 'swiper/modules';
 import 'swiper/css/navigation';
 import { selectProducts } from "../../utils";
 import { products } from "../../data/data";
-import SlideProduct from "./SlideProduct";
 import styled from "styled-components";
+import ProductCard from "./ProductCard";
  function ProductSlider() {
   const result = selectProducts(products,12)
   return (
@@ -30,6 +30,9 @@ import styled from "styled-components";
           '@1.50': {
             slidesPerView: 2,
           },
+          "@1.75":{
+            slidesPerView: 3,
+          },
           "@2":{
             slidesPerView: 4,
           }
@@ -37,10 +40,11 @@ import styled from "styled-components";
         spaceBetween={10}
          slidesPerView={4} 
          navigation={true} 
+         loop={true}
          modules={[Navigation,Autoplay]} 
          className="mySwiper">
         {
-          result.map((product)=> <SwiperSlide key={product.id}><SlideProduct product={product}/></SwiperSlide>)
+          result.map((product)=> <SwiperSlide key={product.id}><ProductCard product={product}/></SwiperSlide>)
         }
        
       </Swiper>

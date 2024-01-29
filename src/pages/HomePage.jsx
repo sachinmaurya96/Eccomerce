@@ -28,7 +28,7 @@ const HomePage = () => {
         </div>
         <div className="products_grid">
           {result.map((product) => (
-            <ProductCard product={product} />
+            <ProductCard product={product} key={product.id}/>
           ))}
         </div>
       </div>
@@ -52,7 +52,7 @@ const HomePage = () => {
           </div>
           <div className="sale-product">
             {bestDearProduct.map((product) => (
-              <ProductCard product={product} />
+              <ProductCard product={product} key={product.id}/>
             ))}
           </div>
         </div>

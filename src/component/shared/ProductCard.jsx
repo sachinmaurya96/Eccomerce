@@ -15,8 +15,8 @@ const ProductCard = ({ product,height ="300px" }) => {
         </div>
       </div>
       <div className="content">
-        <Link>
-          <span className="name">{product.title}</span>
+        <Link to={`/product/${product.id}`}>
+          <span className="name">{product.title.length>26? product.title.slice(0,25)+"...":product.title}</span>
         </Link>
         <div className="rating">
           <StarRatings
@@ -72,14 +72,16 @@ const Card = styled.div`
       border-radius: 5px;
       background-position: center;
       object-fit: cover;
+      transform: scale(1);
+      transition: transform 0.3s ease-out;
     }
   }
   .image:hover .cart_button {
     bottom: 0;
   }
   .image:hover img {
-    transition: transform 0.9s;
     transform: scale(1.1);
+    transition: transform 0.9s ease-in;
   }
   .content {
     display: flex;
@@ -87,11 +89,16 @@ const Card = styled.div`
     align-items: center;
     gap: 10px;
     padding-top: 10px;
+    .name:hover{
+      color: crimson;
+      transition: .2s;
+    }
     .price {
       .real_price {
         color: lightgray;
       }
     }
   }
+  
 `;
 export default ProductCard;

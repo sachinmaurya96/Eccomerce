@@ -20,7 +20,7 @@ const OneProductSlide = ({products=[]}) => {
       >
         {
           products.map((product)=>(
-            <SwiperSlide>
+            <SwiperSlide key={product.id}>
           <div className="card">
             <div className="image">
               <img
