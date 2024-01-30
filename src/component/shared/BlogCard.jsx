@@ -1,22 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-const BlogCard = () => {
+const BlogCard = ({blog}) => {
+    const timestamp = new Date(blog.created_at);
+// Get month name
+const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(timestamp);
+// Get date
+const date = timestamp.getDate();
   return (
     <Wrapper>
+      <Link to={`/blog/${blog.id}`}>
       <div className="blog_card">
         <div className="date">
-            <span className="month">May</span>
-            <span className="day">25</span>
+            <span className="month">{monthName}</span>
+            <span className="day">{date}</span>
         </div>
         <div className="image">
-            <img src="/assets/user.png" alt="" />
+            <img src={blog.photo_url} alt={blog.title} />
         </div>
         <div className="blog_content">
             <div className="blog_title">
-                <h4>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h4>
+              <h4>{blog.title}</h4>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum, soluta!</p>
+            <p>{blog.content_text.slice(0,100)}...</p>
             <hr color='crimson'/>
             <div className="user_detail">
                 <div className="user">
@@ -30,6 +37,7 @@ const BlogCard = () => {
             </div>
         </div>
       </div>
+      </Link>
     </Wrapper>
   )
 }
@@ -65,6 +73,11 @@ const Wrapper = styled.div`
                     line-height: 25px;
                     font-weight: 400;
                     color: black;
+
+                    &:hover{
+                        color: crimson;
+                        transition: .2s;
+                    }
                 }
             }
             p{
@@ -105,7 +118,7 @@ const Wrapper = styled.div`
         }
     }
 
-    @media only screen and (max-width: 426px){
+    @media only screen and (max-width: 600px){
         .blog_card{
             .date{
                 display: none;
