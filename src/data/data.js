@@ -3327,3 +3327,18 @@ export const blogs =[
     updated_at: "2023-03-16T19:06:12.184365",
   },
 ]
+export const homeSlideimg = [
+  "/assets/slide1.png" ,
+  "/assets/slide2.png" ,
+  "/assets/slide3.png" ,
+  "/assets/slide4.png" ,
+  "/assets/slide5.png" ,
+  "/assets/slide6.png" 
+]
+
+export const authSldeimg = [
+  "/assets/auth1.png" ,
+  "/assets/auth2.png" ,
+  "/assets/auth3.png" ,
+  "/assets/auth4.png" ,
+]

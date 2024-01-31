@@ -43,4 +43,13 @@ export function findHighestDiscountProducts(products, limit) {
     return topProducts;
   }
 
+  export const getDateMonth =(blog)=>{
+    const timestamp = new Date(blog.created_at);
+    // Get month name
+    const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(timestamp);
+    // Get date
+    const date = timestamp.getDate();
+    return {monthName,date}
+  }
+
   

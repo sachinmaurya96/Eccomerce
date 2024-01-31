@@ -64,7 +64,9 @@ const router = createBrowserRouter([
         path: "/login",
         element: (
           <Protected authentication={false}>
-            <LoginPage />
+            
+              <LoginPage />
+            
           </Protected>
         ),
       },
@@ -72,7 +74,9 @@ const router = createBrowserRouter([
         path: "/signup",
         element: (
           <Protected authentication={false}>
-            <SignupPage />
+            
+              <SignupPage />
+           
           </Protected>
         ),
       },

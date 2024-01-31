@@ -8,14 +8,15 @@ import ReviewCard from "../component/shared/ReviewCard";
 import BlogCard from "../component/shared/BlogCard";
 import ServiceCard from "../component/shared/ServiceCard";
 import { findHighestDiscountProducts, selectProducts } from "../utils";
-import { products } from "../data/data";
+import { blogs, homeSlideimg, products } from "../data/data";
 
 const HomePage = () => {
   const result = selectProducts(products);
   const bestDearProduct = selectProducts(products,6)
+  const selectBlog = selectProducts(blogs,2)
   return (
     <Wrapper>
-      <FullSlider />
+      <FullSlider images={homeSlideimg}/>
       <div className="offer-cards container">
         <OfferCard img={"/assets/offer2.png"} />
         <OfferCard img={"/assets/offer3.png"} />
@@ -90,8 +91,9 @@ const HomePage = () => {
             <p>Find all latest update here</p>
           </div>
           <div className="blog_container">
-            <BlogCard />
-            <BlogCard />
+           {
+            selectBlog.map((blog)=> <BlogCard key={blog.id} blog={blog}/>)
+           }
           </div>
         </div>
       </div>

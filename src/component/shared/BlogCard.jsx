@@ -1,20 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import { getDateMonth } from '../../utils'
 
 const BlogCard = ({blog}) => {
-    const timestamp = new Date(blog.created_at);
-// Get month name
-const monthName = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(timestamp);
-// Get date
-const date = timestamp.getDate();
+   const date = getDateMonth(blog)
   return (
     <Wrapper>
       <Link to={`/blog/${blog.id}`}>
       <div className="blog_card">
         <div className="date">
-            <span className="month">{monthName}</span>
-            <span className="day">{date}</span>
+            <span className="month">{date.monthName}</span>
+            <span className="day">{date.date}</span>
         </div>
         <div className="image">
             <img src={blog.photo_url} alt={blog.title} />

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Protected = ({children,authentication=true}) => {
-    const authStatus = true
+    const authStatus = false
     const navigate = useNavigate()
 
     useEffect(()=>{

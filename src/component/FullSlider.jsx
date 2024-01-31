@@ -5,11 +5,10 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import {  Autoplay} from 'swiper/modules';
 
-const FullSlider = () => {
+const FullSlider = ({images}) => {
   return (
     <Wrapper>
       <Swiper
-        
         className="mySwiper"
         autoplay={{
           delay: 2500,
@@ -18,12 +17,9 @@ const FullSlider = () => {
         loop={true}
         modules={[Autoplay]}
       >
-        <SwiperSlide><img src="/assets/slide1.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="/assets/slide2.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="/assets/slide3.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="/assets/slide4.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="/assets/slide5.png" alt="" /></SwiperSlide>
-        <SwiperSlide><img src="/assets/slide6.png" alt="" /></SwiperSlide>
+        {
+          images?.map((img,index)=><SwiperSlide key={index+1}><img src={img} alt={img} /></SwiperSlide>)
+        }
       </Swiper>
     </Wrapper>
   )
@@ -60,23 +56,6 @@ width: 100%;
   
 }
 
-.swiper-pagination-bullet {
-  width: 20px;
-  height: 20px;
-  text-align: center;
-  line-height: 20px;
-  font-size: 12px;
-  color: #000;
-  opacity: 1;
-  background: rgba(0, 0, 0, 0.2);
-  overflow-x: hidden;
-}
-
-.swiper-pagination-bullet-active {
-  color: #fff;
-  background: #007aff;
-  overflow-x: hidden;
-}
 
 
 `
